@@ -1,0 +1,32 @@
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import java.net.URL?>
+<?import javafx.geometry.Insets?>
+<GridPane fx:controller="sample.Controller" xmlns:fx="http://javafx.com/fxml" alignment="center" hgap="5" vgap="5">
+    <padding>
+        <Insets top="25" right="25" bottom="10" left="25"/>
+    </padding>
+    <Label GridPane.columnIndex="0" GridPane.rowIndex="0" GridPane.columnSpan="4" wrapText="true">
+        Bitte wählen Sie die Zeit aus.
+        In wie viel Stunden und Minuten soll der Computer heruntergefahren werden?
+    </Label>
+    <ChoiceBox fx:id="hours" onAction="#checkDisabled" GridPane.columnIndex="0" GridPane.rowIndex="2"/>
+
+    <Label GridPane.columnIndex="2" GridPane.rowIndex="2">:</Label>
+
+    <ChoiceBox fx:id="minutes" onAction="#checkDisabled" GridPane.columnIndex="3" GridPane.rowIndex="2"/>
+
+    <Button fx:id="shutdown" disable="true" onMouseClicked="#shutDown" GridPane.columnIndex="0"
+            GridPane.rowIndex="3">
+        Herunterfahren
+    </Button>
+    <Button onMouseClicked="#cancel" GridPane.columnIndex="3" GridPane.rowIndex="3">
+        Abbrechen
+    </Button>
+
+    <Label fx:id="lblHours" id="lblHours" GridPane.columnIndex="0" GridPane.rowIndex="4" GridPane.columnSpan="4"/>
+
+    <stylesheets>
+        <URL value="@main.css"/>
+    </stylesheets>
+</GridPane>
